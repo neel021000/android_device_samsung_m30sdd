@@ -17,14 +17,18 @@
 # Release name
 PRODUCT_RELEASE_NAME := m30sdd
 
-$(call inherit-product, build/target/product/embedded.mk)
+# Inherit from those products. Most specific first.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 
-# Inherit from our custom product configuration
-$(call inherit-product, vendor/omni/config/common.mk)
+# Inherit from device
+$(call inherit-product, device/samsung/m30sdd/omni_m30sdd.mk)
 
-## Device identifier. This must come after all inclusions
+# Inherit common product files.
+$(call inherit-product, vendor/pb/config/common.mk)
+
+# Set those variables here to overwrite the inherited values.
+PRODUCT_BRAND := samsung 
 PRODUCT_DEVICE := m30sdd
 PRODUCT_NAME := omni_m30sdd
-PRODUCT_BRAND := samsung
-PRODUCT_MODEL := Galaxy M30s
 PRODUCT_MANUFACTURER := samsung
+PRODUCT_MODEL := m30sdd
