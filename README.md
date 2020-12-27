@@ -38,7 +38,6 @@ which recoveries you can build
 2-OFOX
 3-SHRP
 4-PBRP
-5-TWRP-10
 ```
 # TWRP-9 Recovery
 ```
