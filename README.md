@@ -38,6 +38,7 @@ which recoveries you can build
 2-OFOX
 3-SHRP
 4-PBRP
+5-TWRP-10
 ```
 # TWRP-9 Recovery
 ```
@@ -106,6 +107,25 @@ $ repo init -u git://github.com/PitchBlackRecoveryProject/manifest_pb.git -b and
 
 ## Clone m30sdd repo
 $ git clone https://github.com/neel021000/android_device_samsung_m30sdd.git -b PBRP device/samsung/m30sdd
+
+## Sync
+$ repo sync --no-repo-verify -c --force-sync --no-clone-bundle --no-tags --optimized-fetch --prune -j64
+
+## Build
+$ . build/envsetup.sh ;
+lunch omni_m30sdd-eng ;
+mka recoveryimage
+```
+# TWRP-10 Recovery
+```
+# Create dirs
+$ mkdir recoveries ; cd recoveries ; mkdir TWRP ; cd TWRP
+
+## Init repo
+$ repo init -u git://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-10.0
+
+## Clone m30sdd repo
+$ git clone https://github.com/neel021000/android_device_samsung_m30sdd.git -b TWRP device/samsung/m30sdd
 
 ## Sync
 $ repo sync --no-repo-verify -c --force-sync --no-clone-bundle --no-tags --optimized-fetch --prune -j64
