@@ -2,6 +2,8 @@
 
 # Huge thnx to @astrako for his help
 
+cd ../../..
+
 sudo apt-get update
           sudo DEBIAN_FRONTEND=noninteractive apt-get install \
           bison build-essential curl flex git gnupg gperf \
