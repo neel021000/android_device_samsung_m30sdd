@@ -20,8 +20,8 @@ PATH=~/bin:$PATH
 curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
 chmod a+x ~/bin/repo
 
-mkdir twrp
-cd twrp
+mkdir ofox
+cd ofox
 
 repo init --depth=1 -u https://gitlab.com/OrangeFox/Manifest.git -b fox_9.0
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
