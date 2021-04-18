@@ -2,26 +2,32 @@
 
 # Huge thnx to @astrako for his help
 
-# Target device
-TARGET_DEVICE="$1"
+sudo apt-get update
+          sudo DEBIAN_FRONTEND=noninteractive apt-get install \
+          bison build-essential curl flex git gnupg gperf \
+          liblz4-tool libncurses5-dev libsdl1.2-dev libxml2 \
+          libxml2-utils lzop pngcrush schedtool \
+          squashfs-tools xsltproc zip zlib1g-dev \
+          build-essential kernel-package libncurses5-dev \
+          bzip2 git python expect \
+          gcc-aarch64-linux-gnu g++-aarch64-linux-gnu -y
 
-# configure some default settings for the build
-Default_Settings() {
+curl https://raw.githubusercontent.com/akhilnarang/scripts/master/setup/android_build_env.sh | bash
 
-    export TARGET_DEVICE="$i"
-}
+mkdir ~/bin
+PATH=~/bin:$PATH
 
-# build the project
-do_build() {
-  Default_Settings
+curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+chmod a+x ~/bin/repo
 
-  # compile it
-  . build/envsetup.sh
-  
-  lunch omni_m30sdd-eng
-  
-  mka recoveryimage -j64
-}
+mkdir twrp
+cd twrp
 
-# --- main --- #
-do_build
+repo init --depth=1 -u https://gitlab.com/OrangeFox/Manifest.git -b fox_9.0
+repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
+
+git clone https://github.com/neel0210/android_device_samsung_m30sdd.git -b OFOX device/samsung/m30sdd
+
+. build/envsetup.sh
+lunch omni_m30sdd-eng
+mka recoveryimage -j64
