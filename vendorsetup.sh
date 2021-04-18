@@ -26,9 +26,9 @@ export FOX_RECOVERY_INSTALL_PARTITION="/dev/block/platform/13520000.ufs/by-name/
 export FOX_RECOVERY_SYSTEM_PARTITION="/dev/block/platform/13520000.ufs/by-name/system"
 export FOX_RECOVERY_VENDOR_PARTITION="/dev/block/platform/13520000.ufs/by-name/vendor"
 export OF_AB_DEVICE=1
-export OF_DISABLE_MIUI_SPECIFIC_FEATURES="1"
+#export OF_DISABLE_MIUI_SPECIFIC_FEATURES="1"
 export OF_FLASHLIGHT_ENABLE="0"
-export OF_MAINTAINER="neel021000"
+export OF_MAINTAINER="neel0210"
 export OF_SCREEN_H=2340
 export OF_STATUS_H=80
 export OF_STATUS_INDENT_LEFT=48
@@ -41,7 +41,7 @@ export FOX_BUILD_TYPE="Beta"
 export FOX_VERSION="R11.0"
 export FOX_ADVANCED_SECURITY="1"
 export OF_USE_TWRP_SAR_DETECT="1"
-export OF_DISABLE_MIUI_OTA_BY_DEFAULT="1"
+#export OF_DISABLE_MIUI_OTA_BY_DEFAULT="1"
 export OF_QUICK_BACKUP_LIST="/boot;/data;/system_image;/vendor_image;"
 
 # Common
@@ -74,7 +74,7 @@ export OF_SKIP_MULTIUSER_FOLDERS_BACKUP="1"
 export OF_USE_SYSTEM_FINGERPRINT="1"
 
 # OTA for custom ROMs
-export OF_SUPPORT_ALL_BLOCK_OTA_UPDATES="1"
-export OF_FIX_OTA_UPDATE_MANUAL_FLASH_ERROR="1"
+#export OF_SUPPORT_ALL_BLOCK_OTA_UPDATES="1"
+#export OF_FIX_OTA_UPDATE_MANUAL_FLASH_ERROR="1"
 
 add_lunch_combo omni_m30sdd-eng
